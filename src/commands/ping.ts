@@ -1,9 +1,9 @@
-import { CommandInteraction } from "discord.js";
+import { Command } from "../types";
 
-export const Ping = {
+export const Ping: Command = {
     name: "ping",
     description: "Replies with Pong!",
-    execute: async (interaction: CommandInteraction) => {
+    execute: async (interaction) => {
         await interaction.reply("Pong!");
     },
 };
