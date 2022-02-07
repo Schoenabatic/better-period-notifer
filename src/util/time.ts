@@ -1,8 +1,8 @@
 export class Time {
-    HMformat() {
-        //future me can solve this i hope
+    HMformat(date?: Date) {
+        if (date) return `${date.getHours() % 12}:${date.getMinutes()}`;
         const time = this.getTime();
-        return `${time.getHours()}:${time.getMinutes()}`;
+        return `${time.getHours() % 12}:${time.getMinutes()}`;
     }
 
     getTime(offset = 5.5) {

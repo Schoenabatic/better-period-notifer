@@ -9,7 +9,7 @@ import { CLIENT_ID, GUILD_ID } from "./constants";
 import notifer from "./notifer";
 import { getState } from "./util/json";
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 const rest = new REST({ version: "9" }).setToken(process.env.token!);
 
@@ -19,7 +19,7 @@ const main = async () => {
     client.on("ready", () => {
         console.log(`Logged in as ${client.user!.tag}!`);
         const state = getState();
-        if (state.enabled) notifer.start();
+        if (state.enabled) notifer.start(client);
     });
 
     client.on("interactionCreate", async (interaction) => {
