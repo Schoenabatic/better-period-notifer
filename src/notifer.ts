@@ -21,9 +21,13 @@ class Notifer extends Time {
         const periods = this.state.timetable[this.HMformat()];
         if (!periods) return;
         if (periods.length === 1) {
-            return (this.channel as TextChannel).send(periods[0]);
+            return this.send(periods[0]);
         }
-        return (this.channel as TextChannel).send(periods[this.getTime().getDay() - 1]);
+        return this.send(periods[this.getTime().getDay() - 1]);
+    }
+
+    send(period: string) {
+        (this.channel as TextChannel).send(period);
     }
 }
 
