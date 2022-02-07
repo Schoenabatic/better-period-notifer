@@ -5,10 +5,11 @@ import dotenv from "dotenv";
 dotenv.config();
 
 import commands from "./commands";
+import { CLIENT_ID, GUILD_ID } from "./constants";
+import notifer from "./notifer";
+import { getState } from "./util/json";
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const CLIENT_ID = "940146275460980756";
-const GUILD_ID = "747955932834693273";
 
 const rest = new REST({ version: "9" }).setToken(process.env.token!);
 
@@ -17,6 +18,8 @@ const main = async () => {
     const commandNames = commands.map((s) => s.name);
     client.on("ready", () => {
         console.log(`Logged in as ${client.user!.tag}!`);
+        const state = getState();
+        if (state.enabled) notifer.start();
     });
 
     client.on("interactionCreate", async (interaction) => {
