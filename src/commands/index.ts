@@ -1,4 +1,4 @@
 import { Ping } from "./ping";
-import { Start } from "./start";
+import { Toggle } from "./toggle";
 
-export default [Ping, Start];
+export default [Ping, Toggle];
