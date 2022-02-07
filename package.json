@@ -9,6 +9,7 @@
         "dev": "tsc-watch --onSuccess \"node dist/index.js\""
     },
     "devDependencies": {
+        "@types/http-server": "^0.12.1",
         "@types/node": "^17.0.15",
         "nodemon": "^2.0.15",
         "tsc-watch": "^4.6.0",

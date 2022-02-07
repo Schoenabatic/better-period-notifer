@@ -58,6 +58,20 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
+"@types/connect@*":
+  version "3.4.35"
+  resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.35.tgz#5fcf6ae445e4021d1fc2219a4873cc73a3bb2ad1"
+  integrity sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==
+  dependencies:
+    "@types/node" "*"
+
+"@types/http-server@^0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@types/http-server/-/http-server-0.12.1.tgz#025f916420673f5ebc5ea48987aeae27776f02ac"
+  integrity sha512-OJ8zs0o8JuHo92KCCsLq4BqkHPi1+Aj2yoPQXJ18LPUxOA1lqKfgBLtHNAQTwwPzeBqyo+HDkWD91MkfOGvNJg==
+  dependencies:
+    "@types/connect" "*"
+
 "@types/node-fetch@^2.5.12":
   version "2.5.12"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.12.tgz#8a6f779b1d4e60b7a57fb6fd48d84fb545b9cc66"

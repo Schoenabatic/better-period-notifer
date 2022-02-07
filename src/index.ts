@@ -8,6 +8,7 @@ import commands from "./commands";
 import { CLIENT_ID, GUILD_ID } from "./constants";
 import notifer from "./notifer";
 import { getState } from "./util/json";
+import { keepAlive } from "./util/keepalive";
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -30,7 +31,7 @@ const main = async () => {
             commands[index].execute(interaction);
         }
     });
-
+    keepAlive();
     client.login(process.env.token!);
 };
 
