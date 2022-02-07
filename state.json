@@ -1,3 +1,14 @@
 {
-  "enabled": false
+    "enabled": false,
+    "timetable": {
+        "08:30": ["Home Room"],
+        "08:40": ["Biology/BST", "Math", "Math", "Chem/Eco", "Chem/Eco"],
+        "09:25": ["Physics", "Biology/BST", "English", "IT", "IT"],
+        "10:20": ["IT", "Physics", "IT", "English", "English"],
+        "11:05": ["English", "IT", "Physics", "Biology/BST", "Physics", "Physics"],
+        "11:50": ["Math", "English", "Math", "Physics", "Biology/BST"],
+        "12:35": ["CT TIME???"],
+        "01:25": ["Chem/Eco", "English", "Math", "Biology/BST", "Math"],
+        "02:10": ["Math", "PE", "Physics", "PE", "Physics"]
+    }
 }
