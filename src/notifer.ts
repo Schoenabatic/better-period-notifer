@@ -19,6 +19,8 @@ class Notifer extends Time {
     interval() {
         const [time, AMPM] = this.HMformat()
         console.log(time, AMPM)
+        // if its past 3 o clock in the afternoon RETURN otherwise when it hits 8 40pm at night it will trigger the notifer eh
+        if (parseInt(time.split(':')[0]) > 3 && AMPM === 'PM') return
         const periods = this.state.timetable[time]
         if (!periods) return
         if (periods.length === 1) {
