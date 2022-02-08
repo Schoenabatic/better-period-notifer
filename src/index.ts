@@ -1,12 +1,6 @@
 import { REST } from '@discordjs/rest'
 import { Routes } from 'discord-api-types/v9'
-import {
-    ButtonInteraction,
-    Client,
-    Intents,
-    MessageActionRow,
-    MessageButton
-} from 'discord.js'
+import { Client, Intents, MessageActionRow, MessageButton } from 'discord.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -52,7 +46,7 @@ const main = async () => {
                             .setLabel(enabled ? 'Disable' : 'Enable')
                             .setStyle(enabled ? 'DANGER' : 'SUCCESS')
                     )
-                    ;(interaction as ButtonInteraction).update({
+                    interaction.update({
                         embeds: getStatusEmbed(client),
                         components: [row]
                     })

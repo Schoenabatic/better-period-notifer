@@ -30,7 +30,7 @@ export const getStatusEmbed = (
     return [
         {
             title: 'Status',
-            description: `Enabled: \`${state.enabled}\`\nGuild ID: \`${GUILD_ID}\` (${guild.name})\nChannel ID: \`${CHANNEL_ID}\` <#${CHANNEL_ID}>\n`,
+            description: `(\`🚀\`) Enabled: \`${state.enabled}\`\n(\`🚟\`) Guild ID: \`${GUILD_ID}\` (${guild.name})\n(\`🚟\`) Channel ID: \`${CHANNEL_ID}\` <#${CHANNEL_ID}>\n`,
             footer: {
                 text: 'how was your day'
             }
