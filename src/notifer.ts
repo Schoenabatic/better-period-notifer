@@ -17,8 +17,9 @@ class Notifer extends Time {
     }
 
     interval() {
-        console.log(this.HMformat())
-        const periods = this.state.timetable[this.HMformat()]
+        const [time, AMPM] = this.HMformat()
+        console.log(time, AMPM)
+        const periods = this.state.timetable[time]
         if (!periods) return
         if (periods.length === 1) {
             return this.send(periods[0])

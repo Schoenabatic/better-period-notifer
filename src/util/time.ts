@@ -1,8 +1,21 @@
 export class Time {
     HMformat(date?: Date) {
-        if (date) return `${date.getHours() % 12}:${date.getMinutes()}`
+        if (date)
+            return date
+                .toLocaleTimeString('en-US', {
+                    hour: 'numeric',
+                    minute: 'numeric',
+                    hour12: true
+                })
+                .split(' ')
         const time = this.getTime()
-        return `${time.getHours() % 12}:${time.getMinutes()}`
+        return time
+            .toLocaleTimeString('en-US', {
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            })
+            .split(' ')
     }
 
     getTime(offset = 5.5) {
