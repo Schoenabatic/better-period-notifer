@@ -6,7 +6,7 @@ dotenv.config()
 
 import commands from './commands'
 import { getStatusEmbed } from './commands/status'
-import { CLIENT_ID, GUILD_ID } from './constants'
+import { CLIENT_ID } from './constants'
 import notifer from './notifer'
 import { getState } from './util/json'
 import { keepAlive } from './util/keepalive'
@@ -19,13 +19,13 @@ const client = new Client({
 const rest = new REST({ version: '9' }).setToken(process.env.token!)
 
 const main = async () => {
-    await rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), {
+    const state = getState()
+    await rest.put(Routes.applicationGuildCommands(CLIENT_ID, state.GUILD_ID), {
         body: commands
     })
     const commandNames = commands.map(s => s.name)
     client.on('ready', () => {
         console.log(`Logged in as ${client.user!.tag}!`)
-        const state = getState()
         if (state.enabled) notifer.start(client)
     })
 

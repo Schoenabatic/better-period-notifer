@@ -1,5 +1,7 @@
 {
   "enabled": true,
+  "CHANNEL_ID": "765056421309710376",
+  "GUILD_ID": "747955932834693273",
   "timetable": {
     "8:30": [
       "Home Room"

@@ -5,6 +5,8 @@ export type Command = ApplicationCommandData & {
 }
 export interface StateInterface {
     enabled: boolean
+    CHANNEL_ID: string
+    GUILD_ID: string
     timetable: {
         [key: string]: string[]
     }

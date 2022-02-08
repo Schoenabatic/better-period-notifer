@@ -1,5 +1,4 @@
 import { Client, MessageActionRow, MessageButton } from 'discord.js'
-import { CHANNEL_ID, GUILD_ID } from '../constants'
 import { Command, StateInterface } from '../types'
 import { getState } from '../util/json'
 
@@ -26,11 +25,11 @@ export const getStatusEmbed = (
     client: Client,
     state: StateInterface = getState()
 ) => {
-    const guild = client.guilds.cache.get(GUILD_ID)!
+    const guild = client.guilds.cache.get(state.GUILD_ID)!
     return [
         {
             title: 'Status',
-            description: `(\`🚀\`) Enabled: \`${state.enabled}\`\n(\`🚟\`) Guild ID: \`${GUILD_ID}\` (${guild.name})\n(\`🚟\`) Channel ID: \`${CHANNEL_ID}\` <#${CHANNEL_ID}>\n`,
+            description: `(\`🚀\`) Enabled: \`${state.enabled}\`\n(\`🚟\`) Guild ID: \`${guild.id}\` (${guild.name})\n(\`🚟\`) Channel ID: \`${state.CHANNEL_ID}\` <#${state.CHANNEL_ID}>\n`,
             footer: {
                 text: 'how was your day'
             }
