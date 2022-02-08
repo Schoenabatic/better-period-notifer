@@ -8,6 +8,6 @@ export const Toggle: Command = {
     execute: async (interaction) => {
         const state = setState((state) => ({ ...state, enabled: !state.enabled }));
         state.enabled ? notifer.start(interaction.client) : notifer.stop();
-        interaction.reply(`enabled: ${state.enabled}`);
+        interaction.reply(`enabled: \`${state.enabled}\``);
     },
 };
