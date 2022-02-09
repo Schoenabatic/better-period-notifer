@@ -1,63 +1,16 @@
 {
-  "enabled": true,
-  "CHANNEL_ID": "765056421309710376",
-  "GUILD_ID": "747955932834693273",
-  "timetable": {
-    "8:30": [
-      "Home Room"
-    ],
-    "8:40": [
-      "Biology/BST",
-      "Math",
-      "Math",
-      "Chem/Eco",
-      "Chem/Eco"
-    ],
-    "9:25": [
-      "Physics",
-      "Biology/BST",
-      "English",
-      "IT",
-      "IT"
-    ],
-    "10:20": [
-      "IT",
-      "Physics",
-      "IT",
-      "English",
-      "English"
-    ],
-    "11:05": [
-      "English",
-      "IT",
-      "Physics",
-      "Biology/BST",
-      "Physics",
-      "Physics"
-    ],
-    "11:50": [
-      "Math",
-      "English",
-      "Math",
-      "Physics",
-      "Biology/BST"
-    ],
-    "12:35": [
-      "CT TIME???"
-    ],
-    "1:25": [
-      "Chem/Eco",
-      "English",
-      "Math",
-      "Biology/BST",
-      "Math"
-    ],
-    "2:10": [
-      "Math",
-      "PE",
-      "Physics",
-      "PE",
-      "Physics"
-    ]
-  }
+    "enabled": true,
+    "CHANNEL_ID": "816586440862728244",
+    "GUILD_ID": "816589800542175283",
+    "timetable": {
+        "8:30": ["Home Room"],
+        "8:40": ["Biology/BST", "Math", "Math", "Chem/Eco", "Chem/Eco"],
+        "9:25": ["Physics", "Biology/BST", "English", "IT", "IT"],
+        "10:20": ["IT", "Physics", "IT", "English", "English"],
+        "11:05": ["English", "IT", "Biology/BST", "Physics", "Physics"],
+        "11:50": ["Math", "English", "Math", "Physics", "Biology/BST"],
+        "12:35": ["CT TIME???"],
+        "1:25": ["Chem/Eco", "English", "Math", "Biology/BST", "Math"],
+        "2:10": ["Math", "PE", "Physics", "PE", "Physics"]
+    }
 }
