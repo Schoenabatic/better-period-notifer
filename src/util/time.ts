@@ -18,6 +18,10 @@ export class Time {
             .split(' ')
     }
 
+    getDay() {
+        return this.getTime().toLocaleString('en-us', { weekday: 'long' })
+    }
+
     getTime(offset = 5.5) {
         const date = new Date()
         const utc = date.getTime() + date.getTimezoneOffset() * 60000

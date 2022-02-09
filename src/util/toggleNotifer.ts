@@ -1,9 +1,8 @@
-import { Client } from 'discord.js'
 import notifer from '../notifer'
 import { setState } from './json'
 
-export const toggle = (client: Client) => {
+export const toggle = () => {
     const state = setState(state => ({ ...state, enabled: !state.enabled }))
-    state.enabled ? notifer.start(client) : notifer.stop()
+    state.enabled ? notifer.start() : notifer.stop()
     return state.enabled
 }

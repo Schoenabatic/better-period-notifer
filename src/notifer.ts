@@ -7,9 +7,13 @@ class Notifer extends Time {
     intervalId: NodeJS.Timer
     state: StateInterface
     channel?: AnyChannel
-    start(client: Client) {
+    client: Client
+    init(client: Client) {
+        this.client = client
+    }
+    start() {
         this.state = getState()
-        this.channel = client.channels.cache.get('773024516200595496')
+        this.channel = this.client.channels.cache.get(this.state.CHANNEL_ID)
         this.intervalId = setInterval(this.interval.bind(this), 60e3)
     }
     stop() {
@@ -18,9 +22,9 @@ class Notifer extends Time {
 
     interval() {
         const [time, AMPM] = this.HMformat()
+        const hours = this.getTime().getHours()
         console.log(time, AMPM)
-        // if its past 3 o clock in the afternoon RETURN otherwise when it hits 8 40pm at night it will trigger the notifer eh
-        if (parseInt(time.split(':')[0]) > 3 && AMPM === 'PM') return
+        if (!(hours >= 8 && hours <= 15)) return console.log('DONE FOR THE DAY')
         const periods = this.state.timetable[time]
         if (!periods) return
         if (periods.length === 1) {
@@ -30,7 +34,21 @@ class Notifer extends Time {
     }
 
     send(period: string) {
-        ;(this.channel as TextChannel).send(period)
+        ;(this.channel as TextChannel).send({
+            embeds: [
+                {
+                    description: `Day: \`${this.getDay()}\`\nClass: \`${period}\``,
+                    footer: {
+                        text: 'good day to you'
+                    }
+                }
+            ]
+        })
+    }
+
+    getNextClass() {
+        // const currentTime = this.getTime()
+        //eeh ill do it later
     }
 }
 

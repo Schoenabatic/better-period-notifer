@@ -26,7 +26,8 @@ const main = async () => {
     const commandNames = commands.map(s => s.name)
     client.on('ready', () => {
         console.log(`Logged in as ${client.user!.tag}!`)
-        if (state.enabled) notifer.start(client)
+        notifer.init(client)
+        if (state.enabled) notifer.start()
     })
 
     client.on('interactionCreate', async interaction => {
@@ -39,7 +40,7 @@ const main = async () => {
         if (interaction.isButton()) {
             switch (interaction.customId) {
                 case 'toggle':
-                    const enabled = toggle(client)
+                    const enabled = toggle()
                     const row = new MessageActionRow().addComponents(
                         new MessageButton()
                             .setCustomId('toggle')
