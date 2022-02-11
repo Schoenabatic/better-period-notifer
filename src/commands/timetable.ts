@@ -5,7 +5,7 @@ export const Timetable: Command = {
     description: 'sends the timetable :|',
     execute: async interaction => {
         await interaction.reply(
-            'https://cdn.discordapp.com/attachments/756761009729044540/940394532309188668/3qwl6HFH9E4GyeQ83MD4TgAKNp9bmMeE_WZRFevoQlKBYUWb2mfD2Ux78Qr_QepjhSqlNyVtTPE1d_ww1902-h969.png'
+            'https://media.discordapp.net/attachments/756761009729044540/941505967063973888/TT.png'
         )
     }
 }
