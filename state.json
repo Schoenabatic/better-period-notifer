@@ -1,7 +1,7 @@
 {
     "enabled": true,
-    "CHANNEL_ID": "816586440862728244",
-    "GUILD_ID": "816589800542175283",
+    "CHANNEL_ID": "773024516200595496",
+    "GUILD_ID": "816586440862728244",
     "timetable": {
         "8:30": ["Home Room"],
         "8:40": ["Biology/BST", "Math", "Math", "Chem/Eco", "Chem/Eco"],

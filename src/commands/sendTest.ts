@@ -1,9 +1,9 @@
 import { Command } from '../types'
 import notifer from '../notifer'
 import { ApplicationCommandOptionTypes } from 'discord.js/typings/enums'
-export const Ping: Command = {
-    name: 'ping',
-    description: 'Replies with Pong!',
+export const Send: Command = {
+    name: 'send',
+    description: 'send a test of the notifactiont thingy',
     options: [
         {
             name: 'text',
