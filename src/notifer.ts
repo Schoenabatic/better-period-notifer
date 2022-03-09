@@ -38,11 +38,12 @@ class Notifer extends Time {
 
     send(period: string) {
         ;(this.channel as TextChannel).send({
+            content: '<@549244932213309442>',
             embeds: [
                 {
                     description: `Day: \`${this.getDay()}\`\nClass: \`${period}\``,
                     footer: {
-                        text: `good day to you <@549244932213309442>`
+                        text: `good day to you`
                     }
                 }
             ]
