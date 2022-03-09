@@ -22,8 +22,11 @@ class Notifer extends Time {
 
     interval() {
         const [time, AMPM] = this.HMformat()
-        const hours = this.getTime().getHours()
+        const timeDate = this.getTime()
+        const hours = timeDate.getHours()
         console.log(time, AMPM)
+        if (timeDate.getDay() === 0 || timeDate.getDay() === 6)
+            return console.log('ITS WEEKEND I THINk')
         if (!(hours >= 8 && hours <= 15)) return console.log('DONE FOR THE DAY')
         const periods = this.state.timetable[time]
         if (!periods) return
@@ -39,7 +42,7 @@ class Notifer extends Time {
                 {
                     description: `Day: \`${this.getDay()}\`\nClass: \`${period}\``,
                     footer: {
-                        text: 'good day to you'
+                        text: `good day to you <@549244932213309442>`
                     }
                 }
             ]
@@ -49,6 +52,7 @@ class Notifer extends Time {
     getNextClass() {
         // const currentTime = this.getTime()
         //eeh ill do it later
+        //i dont feel like doing it
     }
 }
 
